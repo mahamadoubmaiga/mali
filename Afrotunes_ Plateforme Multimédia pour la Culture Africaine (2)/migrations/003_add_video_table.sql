@@ -1,0 +1,9 @@
+CREATE TABLE video (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    video_url VARCHAR(255) NOT NULL,
+    genre VARCHAR(50) NOT NULL,
+    thumbnail_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

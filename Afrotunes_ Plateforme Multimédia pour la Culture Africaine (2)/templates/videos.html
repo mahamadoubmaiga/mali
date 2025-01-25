@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="videos-header">
+        <h1>African Videos</h1>
+        <p class="lead">Discover amazing African video content</p>
+    </div>
+    
+    <div class="videos-grid">
+        {% for video in videos %}
+        <div class="video-card">
+            <div class="video-thumbnail">
+                {% if video.thumbnail_url %}
+                    <img src="{{ video.thumbnail_url }}" alt="{{ video.title }}">
+                {% else %}
+                    <img src="{{ url_for('static', filename='images/default-video.png') }}" alt="Default Video Thumbnail">
+                {% endif %}
+            </div>
+            <div class="video-info">
+                <h3>{{ video.title }}</h3>
+                <span class="genre-badge">{{ video.genre }}</span>
+                <p class="video-description">{{ video.description }}</p>
+                <a href="{{ video.video_url }}" class="btn btn-primary mt-3" target="_blank">
+                    <i class="fas fa-play-circle"></i> Watch Video
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

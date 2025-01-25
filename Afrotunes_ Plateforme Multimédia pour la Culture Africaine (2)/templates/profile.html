@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="profile-header">
+        <h1>My Profile</h1>
+        <p class="lead">Manage your account and preferences</p>
+    </div>
+    
+    <div class="profile-info mb-5">
+        <div class="text-center">
+            {% if session.get('user', {}).get('photo_url') %}
+                <img src="{{ session['user']['photo_url'] }}" class="profile-image-large mb-3" alt="Profile Picture">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/default-avatar.png') }}" class="profile-image-large mb-3" alt="Default Avatar">
+            {% endif %}
+            <h2 class="mb-2">{{ session.get('user', {}).get('display_name') or session.get('user', {}).get('user_email') }}</h2>
+            <p class="text-muted">Member since {{ session.get('user', {}).get('created_at', 'Today') }}</p>
+        </div>
+    </div>
+    
+    <h3 class="mb-4">Your Activity</h3>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="stats-card">
+                <i class="fas fa-music fa-2x mb-3 text-primary"></i>
+                <div class="stats-value">0</div>
+                <div class="stats-label">Songs Played</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stats-card">
+                <i class="fas fa-book fa-2x mb-3 text-primary"></i>
+                <div class="stats-value">0</div>
+                <div class="stats-label">Books Read</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stats-card">
+                <i class="fas fa-heart fa-2x mb-3 text-primary"></i>
+                <div class="stats-value">0</div>
+                <div class="stats-label">Favorites</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-5">
+        <h3 class="mb-4">Account Settings</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="mb-4">
+                    <h5>Email Address</h5>
+                    <p class="text-muted mb-0">{{ session.get('user', {}).get('user_email') }}</p>
+                </div>
+                <div class="mb-4">
+                    <h5>Preferences</h5>
+                    <p class="text-muted mb-3">Customize your Afrotunes experience</p>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                        <label class="form-check-label" for="emailNotifications">
+                            Email notifications for new releases
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="weeklyNewsletter" checked>
+                        <label class="form-check-label" for="weeklyNewsletter">
+                            Weekly newsletter with curated content
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

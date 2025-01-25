@@ -1,0 +1,7 @@
+INSERT INTO video (title, description, video_url, genre, thumbnail_url) VALUES
+    ('Sauti Sol - Live Performance', 'Traditional meets modern in this captivating performance by Kenya''s Sauti Sol', 'https://example.com/videos/sauti-sol-live', 'Contemporary', 'https://example.com/thumbnails/sauti-sol.jpg'),
+    ('Fela Kuti - Water No Get Enemy', 'Classic Afrobeat performance showcasing the legendary Fela Kuti', 'https://example.com/videos/fela-water', 'Afrobeat', 'https://example.com/thumbnails/fela.jpg'),
+    ('Youssou N''Dour - 7 Seconds', 'Iconic collaboration featuring Senegalese superstar Youssou N''Dour', 'https://example.com/videos/youssou-7seconds', 'World Music', 'https://example.com/thumbnails/youssou.jpg'),
+    ('Angélique Kidjo - Agolo', 'Grammy-winning Beninese artist performing her hit song Agolo', 'https://example.com/videos/kidjo-agolo', 'Traditional', 'https://example.com/thumbnails/kidjo.jpg'),
+    ('Burna Boy - African Giant', 'Modern Afrofusion performance from Nigerian superstar', 'https://example.com/videos/burna-giant', 'Afrofusion', 'https://example.com/thumbnails/burna.jpg'),
+    ('Oumou Sangaré - Mogoya', 'Malian Wassoulou music icon in a powerful live performance', 'https://example.com/videos/oumou-mogoya', 'Traditional', 'https://example.com/thumbnails/oumou.jpg');

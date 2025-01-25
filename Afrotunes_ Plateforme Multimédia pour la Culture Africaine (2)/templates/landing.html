@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="landing-content">
+    <div class="language-selector">
+        <a href="{{ url_for('change_language', lang='en') }}" class="btn btn-sm {% if session.get('lang', 'en') == 'en' %}btn-primary{% else %}btn-outline-primary{% endif %}">EN</a>
+        <a href="{{ url_for('change_language', lang='fr') }}" class="btn btn-sm {% if session.get('lang') == 'fr' %}btn-primary{% else %}btn-outline-primary{% endif %}">FR</a>
+    </div>
+    <div class="landing-header text-center">
+        <h1>{{ translations['welcome'] }}</h1>
+        <p class="lead">{{ translations['subtitle'] }}</p>
+        <div class="mt-4">
+            <p class="mb-4">{{ translations['description'] }}</p>
+            <a href="{{ url_for('profile_route') }}" class="btn btn-primary btn-lg">{{ translations['get_started'] }}</a>
+        </div>
+    </div>
+    <div class="features-section mt-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-music fa-2x mb-3"></i>
+                    <h3>{{ translations['features']['music']['title'] }}</h3>
+                    <p>{{ translations['features']['music']['description'] }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-book fa-2x mb-3"></i>
+                    <h3>{{ translations['features']['books']['title'] }}</h3>
+                    <p>{{ translations['features']['books']['description'] }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt fa-2x mb-3"></i>
+                    <h3>{{ translations['features']['anywhere']['title'] }}</h3>
+                    <p>{{ translations['features']['anywhere']['description'] }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

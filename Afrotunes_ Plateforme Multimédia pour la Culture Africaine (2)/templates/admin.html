@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="admin-header">
+        <h1>Administration</h1>
+        <p class="lead">Gérez le contenu d'Afrotunes</p>
+    </div>
+    
+    <div class="admin-sections">
+        <!-- Section Artistes -->
+        <div class="admin-section">
+            <h2>Gérer les Artistes</h2>
+            <form action="{{ url_for('admin_add_artist') }}" method="post" class="admin-form">
+                <div class="mb-3">
+                    <label for="artistName" class="form-label">Nom de l'artiste</label>
+                    <input type="text" class="form-control" id="artistName" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="artistGenre" class="form-label">Genre</label>
+                    <input type="text" class="form-control" id="artistGenre" name="genre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="artistDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="artistDescription" name="description" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="artistImage" class="form-label">URL de l'image</label>
+                    <input type="url" class="form-control" id="artistImage" name="image_url">
+                </div>
+                <button type="submit" class="btn btn-primary">Ajouter l'artiste</button>
+            </form>
+        </div>
+        
+        <!-- Section Vidéos -->
+        <div class="admin-section">
+            <h2>Gérer les Vidéos</h2>
+            <form action="{{ url_for('admin_add_video') }}" method="post" class="admin-form">
+                <div class="mb-3">
+                    <label for="videoTitle" class="form-label">Titre</label>
+                    <input type="text" class="form-control" id="videoTitle" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="videoDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="videoDescription" name="description" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="videoUrl" class="form-label">URL de la vidéo</label>
+                    <input type="url" class="form-control" id="videoUrl" name="video_url" required>
+                </div>
+                <div class="mb-3">
+                    <label for="videoGenre" class="form-label">Genre</label>
+                    <input type="text" class="form-control" id="videoGenre" name="genre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="videoThumbnail" class="form-label">URL de la miniature</label>
+                    <input type="url" class="form-control" id="videoThumbnail" name="thumbnail_url">
+                </div>
+                <button type="submit" class="btn btn-primary">Ajouter la vidéo</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
